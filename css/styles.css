@@ -1,0 +1,115 @@
+/* ===== BASE ===== */
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', system-ui, sans-serif; }
+.font-serif { font-family: 'Cormorant Garamond', Georgia, serif; }
+
+/* ===== SCROLL ANIMATIONS ===== */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-left {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.fade-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fade-right {
+  opacity: 0;
+  transform: translateX(60px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.fade-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ===== HERO ANIMATIONS ===== */
+.hero-headline {
+  opacity: 0;
+  animation: fadeIn 1.2s ease 0.3s forwards;
+}
+.hero-search {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: slideUp 1s ease 0.8s forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+@keyframes slideUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== LISTING CARD HOVER ===== */
+.listing-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.listing-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+.listing-card:hover img {
+  transform: scale(1.05);
+}
+.listing-card img {
+  transition: transform 0.5s ease;
+}
+
+/* ===== SEARCH INPUT FOCUS GLOW ===== */
+.search-input:focus {
+  box-shadow: 0 0 0 3px rgba(74, 111, 165, 0.35);
+}
+
+/* ===== SERVICE CARD HOVER ===== */
+.service-card {
+  transition: all 0.3s ease;
+  border-bottom: 3px solid transparent;
+}
+.service-card:hover {
+  border-bottom-color: #4A6FA5;
+}
+.service-card:hover .service-icon {
+  color: #4A6FA5;
+}
+
+/* ===== WHATSAPP BUTTON ===== */
+.whatsapp-btn {
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+/* ===== NAV SCROLL EFFECT ===== */
+.nav-scrolled {
+  background: rgba(255, 255, 255, 0.98) !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* ===== MOBILE MENU ANIMATION ===== */
+#mobileMenu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+#mobileMenu.open {
+  max-height: 400px;
+}
+
+/* ===== FORM SUCCESS STATE ===== */
+.form-success {
+  background-color: #22c55e !important;
+}
